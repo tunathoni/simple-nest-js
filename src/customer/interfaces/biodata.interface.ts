@@ -3,4 +3,5 @@ export interface Biodata {
     name: string;
     phone: string;
     address: string;
+    hobby?: string;
 }

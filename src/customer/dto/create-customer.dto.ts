@@ -12,4 +12,7 @@ export class CreateCustomerDto {
 
     @IsString()
     readonly address: string;
+
+    @IsString()
+    readonly hobby: string;
 }
