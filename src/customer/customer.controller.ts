@@ -1,6 +1,6 @@
 import {Body, Controller, Get, Param, Post} from '@nestjs/common';
 import { CustomerService } from './customer.service';
-import { Biodata } from './interfaces/biodata.interface';
+import { Biodata } from '../interfaces/biodata.interface';
 import { CreateCustomerDto } from './dto/create-customer.dto';
 
 @Controller('customer')
@@ -19,6 +19,6 @@ export class CustomerController {
 
     @Post()
     async create(@Body() createCustomerDto: CreateCustomerDto ) {
-        this.customerService.create(createCustomerDto);
+        return this.customerService.create(createCustomerDto);
     }
 }

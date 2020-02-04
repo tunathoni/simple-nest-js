@@ -1,18 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { Biodata } from './interfaces/biodata.interface';
-const uuidv4 = require('uuid/v4');
+import { Biodata } from '../interfaces/biodata.interface';
+import {StringUtil} from "../utils/stringUtil";
 
 @Injectable()
 export class CustomerService {
     private readonly customer: Biodata[] = [];
 
     create(customer: Biodata) {
-        let uuid: string = uuidv4();
-        customer.id = uuid;
+        customer.id = StringUtil.getUUID();
         this.customer.push(customer);
+        return customer;
     }
 
-    findAll(): Biodata[] {
+    findAll<T>(): Array<Biodata> {
         return this.customer;
     }
 
