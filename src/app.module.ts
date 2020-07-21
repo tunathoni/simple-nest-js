@@ -1,18 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CustomerController } from './customer/customer.controller';
-import { CustomerService } from './customer/customer.service';
-import { BankAccountService } from './bank-account/bank-account.service';
-import { BeneficiaryController } from './beneficiary/beneficiary.controller';
-import { BankAccountController } from './bank-account/bank-account.controller';
-import { BeneficiaryService } from './beneficiary/beneficiary.service';
-import { AccountService } from './account/account.service';
-import { AccountController } from './account/account.controller';
+import {AccountModule} from "./account/account.module";
+import {BankAccountModule} from "./bank-account/bank-account.module";
+import {BeneficiaryModule} from "./beneficiary/beneficiary.module";
+import {CustomerModule} from "./customer/customer.module";
 
 @Module({
-  imports: [],
-  controllers: [AppController, CustomerController, BeneficiaryController, BankAccountController, AccountController],
-  providers: [AppService, CustomerService, BankAccountService, BeneficiaryService, AccountService],
+  imports: [AccountModule, BankAccountModule, BeneficiaryModule, CustomerModule],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

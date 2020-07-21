@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import {Beneficiary} from "../interfaces/beneficiary.interface";
 import {BankAccount} from "../interfaces/bank-account.interface";
 import {BeneficiaryAdapter, BeneficiaryAdapterType} from "../adapters/beneficiaryAdapter";
-import {BankAccountService} from "../bank-account/bank-account.service";
 import {StringUtil} from "../utils/stringUtil";
+import {BankAccountService} from "../bank-account/bank-account.service";
 
 @Injectable()
 export class BeneficiaryService {
